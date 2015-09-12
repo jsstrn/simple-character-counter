@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
+    <title>Simple Word Counter</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,12 +14,36 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <h1>Hello, world!</h1>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <body>
+    <div class="container">
+        <h1>Simple Word Counter</h1>
+        <p>Add some text in the textbox below and click the button to see words you have written.</p>
+        <textarea name="name" rows="8" cols="40"></textarea><br>
+        <button class="btn btn-default" type="button" name="button">Count characters</button>
+        <p id="result"></p>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var words = "hello";
+            function wordCounter(words) {
+                var count = 0;
+                for (var i = 0; i < words.length; i++) {
+                    count++;
+                };
+                return count;
+            }
+            var result = wordCounter(words);
+            // Print result
+            $("#result").text("You wrote " + result + " characters.");
+        });
+    </script>
   </body>
 </html>
