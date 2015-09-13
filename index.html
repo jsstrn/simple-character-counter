@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Word Counter</title>
+    <title>Adventures in JavaScript</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,11 +17,12 @@
 
   <body>
     <div class="container">
-        <h1>Simple Word Counter</h1>
-        <p>Add some text in the textbox below and click the button to see words you have written.</p>
+        <h1>Adventures in JavaScript</h1>
+        <h2>A simple word counter</h2>
+        <p>Add some text in the textbox below and click the button to see how many words you have written.</p>
         <textarea name="name" rows="8" cols="40"></textarea><br>
         <button class="btn btn-default" type="button" name="button">Count characters</button>
-        <p id="result"></p>
+        <p>Number of words typed: <span id="results">0</span></p>
     </div>
 
     <!-- jQuery -->
@@ -32,17 +33,21 @@
     <!-- Scripts -->
     <script type="text/javascript">
         $(document).ready(function(){
-            var words = "hello";
+            // when button clicked
+            $('button').click(function(){
+                var text = $('textarea').val(); // get text from textarea
+                var wordCount = wordCounter(text); // count number of words in text
+                $("#results").text(wordCount);
+            });
             function wordCounter(words) {
                 var count = 0;
                 for (var i = 0; i < words.length; i++) {
-                    count++;
+                    if (words[i] != " ") {
+                        count++;
+                    }
                 };
                 return count;
             }
-            var result = wordCounter(words);
-            // Print result
-            $("#result").text("You wrote " + result + " characters.");
         });
     </script>
   </body>
