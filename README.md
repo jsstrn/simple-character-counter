@@ -1,3 +1,3 @@
-# Simple Character Counter
+# Simple Word Counter
 
-This is a simple character counter to demonstrate counting the number to characters (including spaces and punctuations) using jQuery.
+This is a simple word counter to demonstrate counting the number to words and characters using jQuery.
