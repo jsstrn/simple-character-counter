@@ -23,23 +23,7 @@
     <!-- Bootstrap JavaScript CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
-    <!-- My scripts -->
-    <script type="text/javascript">
-        $(document).ready(function(){
-            // button clicked
-            $('button').click(function(){
-                var text = $('textarea').val(); // get text from textarea
-                var charCount = charCounter(text); // count number of words in text
-                $("#results").text(charCount);
-            });
-            function charCounter(text) {
-                var charCount = 0;
-                for (var i = 0; i < text.length; i++) {
-                        charCount++;
-                };
-                return charCount;
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
