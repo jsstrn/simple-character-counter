@@ -11,17 +11,10 @@ $(document).ready(function(){
         if (wordList) {
             wordCount = wordList.length;
         }
-        $("#char").text(charCount);
-        $("#words").text(wordCount);
-        var results = "There are " + charCount + " characters and "+ wordCount +" words.";
-        $('#results').text(results);
-        var displayText = "";
         if (wordCount === 0) {
-            
-        } else if (wordCount > 50) {
-
+            $('#results').text("Don't be silly! There's nothing to count!");
         } else {
-
+            $('#results').text("There are " + charCount + " character(s) and "+ wordCount +" word(s).")
         }
     });
 });
